@@ -1,4 +1,3 @@
-import random
 
 print("=" * 45)
 print("       PYTHON LEARNING ADVENTURE")
@@ -15,12 +14,15 @@ completed_lessons = []
 try:
     with open("progress.txt", "r") as file:
         for lesson in file:
-            completed_lessons.append(lesson.strip())
+            lesson = lesson.strip()
+            if lesson not in completed_lessons:
+                completed_lessons.append(lesson)
 
     print("\nYour previous progress has been loaded!")
 
 except FileNotFoundError:
     print("\nWelcome, new learner!")
+
 
 def main_menue():
 
@@ -41,13 +43,14 @@ def main_menue():
     print("[0] Exit")
     print("===============================")
 
+
 while True:
     main_menue()
 
     choice = input("\nChoose an option: ")
 
     lesson_opened = False
-
+    correct_answer = ""
 
     if choice == "1":
         print("\nLESSON 1: INTRODUCTION TO PROGRAMMING")
@@ -64,25 +67,6 @@ while True:
 
         correct_answer = "2"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "2":
         print("\nLESSON 2: BASIC SYNTAX")
@@ -103,34 +87,6 @@ while True:
         correct_answer = "1"
         lesson_opened = True
 
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            # SAVE PROGRESS
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
-
     elif choice == "3":
         print("\nLESSON 3: PRINTING OUTPUT")
         print("The print() function displays information.")
@@ -150,35 +106,6 @@ while True:
         correct_answer = "2"
         lesson_opened = True
 
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            # SAVE PROGRESS
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
-
-
     elif choice == "4":
         print("\nLESSON 4: PYTHON COMMENTS")
         print("Comments are notes written inside a program.")
@@ -196,34 +123,6 @@ while True:
 
         correct_answer = "1"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "5":
         print("\nLESSON 5: VARIABLES")
@@ -245,33 +144,6 @@ while True:
 
         correct_answer = "2"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "6":
         print("\nLESSON 6: BASIC DATA TYPES")
@@ -296,34 +168,6 @@ while True:
 
         correct_answer = "3"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "7":
         print("\nLESSON 7: ARITHMETIC OPERATORS")
@@ -350,33 +194,6 @@ while True:
         correct_answer = "2"
         lesson_opened = True
 
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
-
     elif choice == "8":
         print("\nLESSON 8: BASIC INPUT AND OUTPUT")
         print("The input() function allows users to enter data.")
@@ -397,33 +214,6 @@ while True:
 
         correct_answer = "2"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "9":
         print("\nLESSON 9: CONDITIONAL STATEMENTS")
@@ -449,34 +239,6 @@ while True:
         correct_answer = "1"
         lesson_opened = True
 
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
-
-
     elif choice == "10":
         print("\nLESSON 10: LOGICAL OPERATORS")
         print("Logical operators combine conditions.")
@@ -499,33 +261,6 @@ while True:
 
         correct_answer = "3"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
 
     elif choice == "11":
         print("\nLESSON 11: LOOPS")
@@ -552,34 +287,6 @@ while True:
 
         correct_answer = "1"
         lesson_opened = True
-
-        if lesson_opened:
-
-            answer = input("\nEnter your answer: ")
-
-            if answer == correct_answer:
-
-                print("\nCORRECT ANSWER!")
-
-                if choice not in completed_lessons:
-                        completed_lessons.append(choice)
-                        print("Congratulations! You earned 1 star!")
-
-                        if choice not in completed_lessons:
-                            completed_lessons.append(choice)
-                            print("Congratulations! You earned 1 star!")
-
-                            with open("progress.txt", "w") as file:
-                                for lesson in completed_lessons:
-                                    file.write(lesson + "\n")
-
-                else:
-                    print("You already earned a star for this lesson!")
-
-            else:
-                print("\nINCORRECT ANSWER!")
-                print("Don't give up! Review the lesson and try again.")
-
 
     elif choice == "12":
         stars = len(completed_lessons)
@@ -618,7 +325,6 @@ while True:
         print("Total Progress:", round(progress), "%")
         print("=========================================")
 
-
     elif choice == "0":
         stars = len(completed_lessons)
 
@@ -630,8 +336,32 @@ while True:
         print("Keep learning and keep coding!")
         break
 
-
     else:
-        print("\nInvalid choice! Please choose from 0 to 12.")
+        print("\nInvalid choice! Please choose from 0 to 13.")
 
-        input("\nPress Enter to return to the main menu...")
+    # QUIZ CHECKING
+    if lesson_opened:
+
+        answer = input("\nEnter your answer: ").strip()
+
+        if answer == correct_answer:
+
+            print("\nCORRECT ANSWER!")
+
+            if choice not in completed_lessons:
+                completed_lessons.append(choice)
+                print("Congratulations! You earned 1 star!")
+
+                # SAVE PROGRESS
+                with open("progress.txt", "w") as file:
+                    for lesson in completed_lessons:
+                        file.write(lesson + "\n")
+
+            else:
+                print("You already earned a star for this lesson!")
+
+        else:
+            print("\nINCORRECT ANSWER!")
+            print("Don't give up! Review the lesson and try again.")
+
+    input("\nPress Enter to return to the main menu...")
