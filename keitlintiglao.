@@ -1,396 +1,396 @@
-‎purple = "\033[35m"
-‎cyan = "\033[36m"
-‎green = "\033[32m"
-‎red = "\033[31m"
-‎yellow = "\033[33m"
-‎reset = "\033[0m"
-‎
-‎print(purple + "=" * 45 + reset)
-‎print(purple + "       PYTHON LEARNING ADVENTURE" + reset)
-‎print(purple + "=" * 45 + reset)
-‎
-‎name = input("\nEnter your name: ")
-‎
-‎print(cyan + "\nHello, " + name + "!" + reset)
-‎print("Welcome to your Python Learning Adventure!")
-‎print("Study lessons, answer quizzes, and collect stars!")
-‎
-‎completed_lessons = []
-‎
-‎try:
-‎    with open("progress.txt", "r") as file:
-‎        for lesson in file:
-‎            lesson = lesson.strip()
-‎            if lesson not in completed_lessons:
-‎                completed_lessons.append(lesson)
-‎
-‎    print(green + "\nYour previous progress has been loaded!" + reset)
-‎
-‎except FileNotFoundError:
-‎    print(yellow + "\nWelcome, new learner!" + reset)
-‎
-‎
-‎def main_menue():
-‎
-‎    print(cyan + "\n========== MAIN MENU ==========" + reset)
-‎    print("[1] Introduction to Programming")
-‎    print("[2] Basic Syntax")
-‎    print("[3] Printing Output")
-‎    print("[4] Python Comments")
-‎    print("[5] Variables and Data Types")
-‎    print("[6] Basic Data Types")
-‎    print("[7] Arithmetic Operators")
-‎    print("[8] Basic Input and Output")
-‎    print("[9] Conditional Statements")
-‎    print("[10] Logical Operators")
-‎    print("[11] Loops")
-‎    print(yellow + "[12] My Star Collection" + reset)
-‎    print(purple + "[13] My Learning Progress" + reset)
-‎    print("[0] Exit")
-‎    print(cyan + "===============================" + reset)
-‎
-‎
-‎while True:
-‎    main_menue()
-‎
-‎    choice = input("\nChoose an option: ")
-‎
-‎    lesson_opened = False
-‎    correct_answer = ""
-‎
-‎    if choice == "1":
-‎        print(purple + "\nLESSON 1: INTRODUCTION TO PROGRAMMING" + reset)
-‎        print("Programming is the process of giving")
-‎        print("instructions to a computer.")
-‎        print("Python is a programming language created")
-‎        print("by Guido van Rossum in 1991.")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("Who created Python?")
-‎        print("[1] Bill Gates")
-‎        print("[2] Guido van Rossum")
-‎        print("[3] Mark Zuckerberg")
-‎
-‎        correct_answer = "2"
-‎        lesson_opened = True
-‎
-‎    elif choice == "2":
-‎        print(purple + "\nLESSON 2: BASIC SYNTAX" + reset)
-‎        print("Syntax refers to the rules of writing code.")
-‎        print("Python is case-sensitive.")
-‎        print("It also uses indentation to organize code.")
-‎
-‎        print("\nExample:")
-‎        print('name = "Alex"')
-‎        print("print(name)")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What is syntax?")
-‎        print("[1] Rules for writing code")
-‎        print("[2] A computer game")
-‎        print("[3] A type of computer")
-‎
-‎        correct_answer = "1"
-‎        lesson_opened = True
-‎
-‎    elif choice == "3":
-‎        print(purple + "\nLESSON 3: PRINTING OUTPUT" + reset)
-‎        print("The print() function displays information.")
-‎
-‎        print("\nExample:")
-‎        print('print("Hello World!")')
-‎
-‎        print("\nOUTPUT:")
-‎        print("Hello World!")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What function displays information?")
-‎        print("[1] input()")
-‎        print("[2] print()")
-‎        print("[3] int()")
-‎
-‎        correct_answer = "2"
-‎        lesson_opened = True
-‎
-‎    elif choice == "4":
-‎        print(purple + "\nLESSON 4: PYTHON COMMENTS" + reset)
-‎        print("Comments are notes written inside a program.")
-‎        print("Python ignores comments when running code.")
-‎
-‎        print("\nExample:")
-‎        print("# This is a comment")
-‎        print('print("Hello")')
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What symbol is used for a single-line comment?")
-‎        print("[1] #")
-‎        print("[2] @")
-‎        print("[3] $")
-‎
-‎        correct_answer = "1"
-‎        lesson_opened = True
-‎
-‎    elif choice == "5":
-‎        print(purple + "\nLESSON 5: VARIABLES" + reset)
-‎        print("Variables are used to store information.")
-‎
-‎        print("\nExample:")
-‎        print('name = "Alex"')
-‎        print("age = 18")
-‎        print("print(name)")
-‎
-‎        print("\nOUTPUT:")
-‎        print("Alex")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What are variables used for?")
-‎        print("[1] To delete information")
-‎        print("[2] To store information")
-‎        print("[3] To close a program")
-‎
-‎        correct_answer = "2"
-‎        lesson_opened = True
-‎
-‎    elif choice == "6":
-‎        print(purple + "\nLESSON 6: BASIC DATA TYPES" + reset)
-‎        print("Python has different types of data.")
-‎
-‎        print("\nString - used for text")
-‎        print("Integer - used for whole numbers")
-‎        print("Float - used for decimal numbers")
-‎        print("Boolean - represents True or False")
-‎
-‎        print("\nExample:")
-‎        print('name = "Alex"')
-‎        print("age = 18")
-‎        print("height = 5.5")
-‎        print("is_student = True")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("Which data type is used for decimal numbers?")
-‎        print("[1] String")
-‎        print("[2] Integer")
-‎        print("[3] Float")
-‎
-‎        correct_answer = "3"
-‎        lesson_opened = True
-‎
-‎    elif choice == "7":
-‎        print(purple + "\nLESSON 7: ARITHMETIC OPERATORS" + reset)
-‎        print("Arithmetic operators are used for calculations.")
-‎
-‎        print("\nAddition:       +")
-‎        print("Subtraction:    -")
-‎        print("Multiplication: *")
-‎        print("Division:       /")
-‎        print("Modulus:        %")
-‎
-‎        print("\nExample:")
-‎        print("print(10 + 5)")
-‎
-‎        print("\nOUTPUT:")
-‎        print(10 + 5)
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What is the operator for multiplication?")
-‎        print("[1] +")
-‎        print("[2] *")
-‎        print("[3] /")
-‎
-‎        correct_answer = "2"
-‎        lesson_opened = True
-‎
-‎    elif choice == "8":
-‎        print(purple + "\nLESSON 8: BASIC INPUT AND OUTPUT" + reset)
-‎        print("The input() function allows users to enter data.")
-‎
-‎        print("\nExample:")
-‎        print('user_name = input("Enter your name: ")')
-‎        print("print(user_name)")
-‎
-‎        print("\nTRY IT YOURSELF:")
-‎        user_name = input("Enter your name: ")
-‎        print("Hello,", user_name)
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("Which function gets information from the user?")
-‎        print("[1] print()")
-‎        print("[2] input()")
-‎        print("[3] len()")
-‎
-‎        correct_answer = "2"
-‎        lesson_opened = True
-‎
-‎    elif choice == "9":
-‎        print(purple + "\nLESSON 9: CONDITIONAL STATEMENTS" + reset)
-‎        print("Conditional statements allow programs")
-‎        print("to make decisions using conditions.")
-‎
-‎        print("\nExample:")
-‎        print("age = 18")
-‎        print("if age >= 18:")
-‎        print('    print("Adult")')
-‎        print("else:")
-‎        print('    print("Minor")')
-‎
-‎        print("\nOUTPUT:")
-‎        print("Adult")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("Which keyword is used when a condition is true?")
-‎        print("[1] if")
-‎        print("[2] print")
-‎        print("[3] input")
-‎
-‎        correct_answer = "1"
-‎        lesson_opened = True
-‎
-‎    elif choice == "10":
-‎        print(purple + "\nLESSON 10: LOGICAL OPERATORS" + reset)
-‎        print("Logical operators combine conditions.")
-‎
-‎        print("\nAND - both conditions must be True.")
-‎        print("OR - at least one condition must be True.")
-‎        print("NOT - reverses the result.")
-‎
-‎        print("\nExample:")
-‎        print("age = 18")
-‎        print("has_id = True")
-‎        print("if age >= 18 and has_id:")
-‎        print('    print("Allowed")')
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("Which operator requires both conditions to be True?")
-‎        print("[1] OR")
-‎        print("[2] NOT")
-‎        print("[3] AND")
-‎
-‎        correct_answer = "3"
-‎        lesson_opened = True
-‎
-‎    
-‎    elif choice == "11":
-‎        print(purple + "\nLESSON 11: LOOPS" + reset)
-‎        print("Loops repeat a set of instructions.")
-‎
-‎        print("\nThere are two common types of loops:")
-‎        print("1. For Loop")
-‎        print("2. While Loop")
-‎
-‎        print("\n========== FOR LOOP EXAMPLE ==========")
-‎        print("A for loop repeats code for a specific sequence.")
-‎
-‎        print("\nExample:")
-‎        print("for number in range(1, 4):")
-‎        print("    print(number)")
-‎
-‎        print("\nOUTPUT:")
-‎        print("1")
-‎        print("2")
-‎        print("3")
-‎
-‎        print("\n========== WHILE LOOP EXAMPLE ==========")
-‎        print("A while loop repeats code while a condition is True.")
-‎
-‎        print("\nExample:")
-‎        print("number = 1")
-‎        print("while number <= 3:")
-‎        print("    print(number)")
-‎        print("    number = number + 1")
-‎
-‎        print("\nOUTPUT:")
-‎        print("1")
-‎        print("2")
-‎        print("3")
-‎
-‎        print("\nThe for loop uses a sequence,")
-‎        print("while the while loop uses a condition.")
-‎
-‎        print(cyan + "\nQUIZ TIME!" + reset)
-‎        print("What are loops used for?")
-‎        print("[1] To repeat instructions")
-‎        print("[2] To delete variables")
-‎        print("[3] To stop a computer")
-‎
-‎        correct_answer = "1"
-‎        lesson_opened = True
-‎
-‎
-‎        correct_answer = "1"
-‎        lesson_opened = True
-‎
-‎    elif choice == "12":
-‎        stars = len(completed_lessons)
-‎
-‎        print(yellow + "\n========== MY STAR COLLECTION ==========" + reset)
-‎        print("Student Name:", name)
-‎        print("Stars Collected:", stars, "/ 11")
-‎
-‎        if stars == 0:
-‎            print("Achievement: New Learner")
-‎        elif stars <= 3:
-‎            print("Achievement: Beginner Coder")
-‎        elif stars <= 6:
-‎            print("Achievement: Python Explorer")
-‎        elif stars <= 10:
-‎            print("Achievement: Python Enthusiast")
-‎        else:
-‎            print(yellow + "Achievement: PYTHON MASTER!" + reset)
-‎
-‎        print(yellow + "========================================" + reset)
-‎
-‎    elif choice == "13":
-‎        print(purple + "\n========== MY LEARNING PROGRESS ==========" + reset)
-‎
-‎        for lesson_number in range(1, 12):
-‎
-‎            if str(lesson_number) in completed_lessons:
-‎                print(green + "Lesson", lesson_number, "- COMPLETED!" + reset)
-‎            else:
-‎                print(red + "Lesson", lesson_number, "- NOT YET COMPLETED" + reset)
-‎
-‎        progress = len(completed_lessons) / 11 * 100
-‎
-‎        print("-----------------------------------------")
-‎        print("Lessons Completed:", len(completed_lessons), "/ 11")
-‎        print(yellow + "Total Progress:", round(progress), "%" + reset)
-‎        print(purple + "=========================================" + reset)
-‎
-‎    elif choice == "0":
-‎        stars = len(completed_lessons)
-‎
-‎        print(purple + "\n================================" + reset)
-‎        print(purple + "       THANK YOU FOR PLAYING!" + reset)
-‎        print(purple + "================================" + reset)
-‎        print("Student:", name)
-‎        print(yellow + "Stars Collected:", stars, "/ 11" + reset)
-‎        print("Keep learning and keep coding!")
-‎        break
-‎
-‎    else:
-‎        print(red + "\nInvalid choice! Please choose from 0 to 13." + reset)
-‎
-‎    if lesson_opened:
-‎
-‎        answer = input("\nEnter your answer: ").strip()
-‎
-‎        if answer == correct_answer:
-‎
-‎            print(green + "\nCORRECT ANSWER!" + reset)
-‎
-‎            if choice not in completed_lessons:
-‎                completed_lessons.append(choice)
-‎                print(yellow + "Congratulations! You earned 1 star!" + reset)
-‎
-‎                with open("progress.txt", "w") as file:
-‎                    for lesson in completed_lessons:
-‎                        file.write(lesson + "\n")
-‎
-‎            else:
-‎                print(yellow + "You already earned a star for this lesson!" + reset)
-‎
-‎        else:
-‎            print(red + "\nINCORRECT ANSWER!" + reset)
-‎            print("Don't give up! Review the lesson and try again.")
-‎
-‎    input("\nPress Enter to return to the main menu...")
+
+purple = "\033[35m"
+cyan = "\033[36m"
+green = "\033[32m"
+red = "\033[31m"
+yellow = "\033[33m"
+reset = "\033[0m"
+
+print(purple + "=" * 45 + reset)
+print(purple + "       PYTHON LEARNING ADVENTURE" + reset)
+print(purple + "=" * 45 + reset)
+
+name = input("\nEnter your name: ")
+
+print(cyan + "\nHello, " + name + "!" + reset)
+print("Welcome to your Python Learning Adventure!")
+print("Study lessons, answer quizzes, and collect stars!")
+
+completed_lessons = []
+
+try:
+    with open("progress.txt", "r") as file:
+        for lesson in file:
+            lesson = lesson.strip()
+            if lesson not in completed_lessons:
+                completed_lessons.append(lesson)
+
+    print(green + "\nYour previous progress has been loaded!" + reset)
+
+except FileNotFoundError:
+    print(yellow + "\nWelcome, new learner!" + reset)
+
+
+def main_menue():
+
+    print(cyan + "\n========== MAIN MENU ==========" + reset)
+    print("[1] Introduction to Programming")
+    print("[2] Basic Syntax")
+    print("[3] Printing Output")
+    print("[4] Python Comments")
+    print("[5] Variables and Data Types")
+    print("[6] Basic Data Types")
+    print("[7] Arithmetic Operators")
+    print("[8] Basic Input and Output")
+    print("[9] Conditional Statements")
+    print("[10] Logical Operators")
+    print("[11] Loops")
+    print(yellow + "[12] My Star Collection" + reset)
+    print(purple + "[13] My Learning Progress" + reset)
+    print("[0] Exit")
+    print(cyan + "===============================" + reset)
+
+
+while True:
+    main_menue()
+
+    choice = input("\nChoose an option: ")
+
+    lesson_opened = False
+    correct_answer = ""
+
+    if choice == "1":
+        print(purple + "\nLESSON 1: INTRODUCTION TO PROGRAMMING" + reset)
+        print("Programming is the process of giving")
+        print("instructions to a computer.")
+        print("Python is a programming language created")
+        print("by Guido van Rossum in 1991.")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("Who created Python?")
+        print("[1] Bill Gates")
+        print("[2] Guido van Rossum")
+        print("[3] Mark Zuckerberg")
+
+        correct_answer = "2"
+        lesson_opened = True
+
+    elif choice == "2":
+        print(purple + "\nLESSON 2: BASIC SYNTAX" + reset)
+        print("Syntax refers to the rules of writing code.")
+        print("Python is case-sensitive.")
+        print("It also uses indentation to organize code.")
+
+        print("\nExample:")
+        print('name = "Alex"')
+        print("print(name)")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What is syntax?")
+        print("[1] Rules for writing code")
+        print("[2] A computer game")
+        print("[3] A type of computer")
+
+        correct_answer = "1"
+        lesson_opened = True
+
+    elif choice == "3":
+        print(purple + "\nLESSON 3: PRINTING OUTPUT" + reset)
+        print("The print() function displays information.")
+
+        print("\nExample:")
+        print('print("Hello World!")')
+
+        print("\nOUTPUT:")
+        print("Hello World!")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What function displays information?")
+        print("[1] input()")
+        print("[2] print()")
+        print("[3] int()")
+
+        correct_answer = "2"
+        lesson_opened = True
+
+    elif choice == "4":
+        print(purple + "\nLESSON 4: PYTHON COMMENTS" + reset)
+        print("Comments are notes written inside a program.")
+        print("Python ignores comments when running code.")
+
+        print("\nExample:")
+        print("# This is a comment")
+        print('print("Hello")')
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What symbol is used for a single-line comment?")
+        print("[1] #")
+        print("[2] @")
+        print("[3] $")
+
+        correct_answer = "1"
+        lesson_opened = True
+
+    elif choice == "5":
+        print(purple + "\nLESSON 5: VARIABLES" + reset)
+        print("Variables are used to store information.")
+
+        print("\nExample:")
+        print('name = "Alex"')
+        print("age = 18")
+        print("print(name)")
+
+        print("\nOUTPUT:")
+        print("Alex")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What are variables used for?")
+        print("[1] To delete information")
+        print("[2] To store information")
+        print("[3] To close a program")
+
+        correct_answer = "2"
+        lesson_opened = True
+
+    elif choice == "6":
+        print(purple + "\nLESSON 6: BASIC DATA TYPES" + reset)
+        print("Python has different types of data.")
+
+        print("\nString - used for text")
+        print("Integer - used for whole numbers")
+        print("Float - used for decimal numbers")
+        print("Boolean - represents True or False")
+
+        print("\nExample:")
+        print('name = "Alex"')
+        print("age = 18")
+        print("height = 5.5")
+        print("is_student = True")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("Which data type is used for decimal numbers?")
+        print("[1] String")
+        print("[2] Integer")
+        print("[3] Float")
+
+        correct_answer = "3"
+        lesson_opened = True
+
+    elif choice == "7":
+        print(purple + "\nLESSON 7: ARITHMETIC OPERATORS" + reset)
+        print("Arithmetic operators are used for calculations.")
+
+        print("\nAddition:       +")
+        print("Subtraction:    -")
+        print("Multiplication: *")
+        print("Division:       /")
+        print("Modulus:        %")
+
+        print("\nExample:")
+        print("print(10 + 5)")
+
+        print("\nOUTPUT:")
+        print(10 + 5)
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What is the operator for multiplication?")
+        print("[1] +")
+        print("[2] *")
+        print("[3] /")
+
+        correct_answer = "2"
+        lesson_opened = True
+
+    elif choice == "8":
+        print(purple + "\nLESSON 8: BASIC INPUT AND OUTPUT" + reset)
+        print("The input() function allows users to enter data.")
+
+        print("\nExample:")
+        print('user_name = input("Enter your name: ")')
+        print("print(user_name)")
+
+        print("\nTRY IT YOURSELF:")
+        user_name = input("Enter your name: ")
+        print("Hello,", user_name)
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("Which function gets information from the user?")
+        print("[1] print()")
+        print("[2] input()")
+        print("[3] len()")
+
+        correct_answer = "2"
+        lesson_opened = True
+
+    elif choice == "9":
+        print(purple + "\nLESSON 9: CONDITIONAL STATEMENTS" + reset)
+        print("Conditional statements allow programs")
+        print("to make decisions using conditions.")
+
+        print("\nExample:")
+        print("age = 18")
+        print("if age >= 18:")
+        print('    print("Adult")')
+        print("else:")
+        print('    print("Minor")')
+
+        print("\nOUTPUT:")
+        print("Adult")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("Which keyword is used when a condition is true?")
+        print("[1] if")
+        print("[2] print")
+        print("[3] input")
+
+        correct_answer = "1"
+        lesson_opened = True
+
+    elif choice == "10":
+        print(purple + "\nLESSON 10: LOGICAL OPERATORS" + reset)
+        print("Logical operators combine conditions.")
+
+        print("\nAND - both conditions must be True.")
+        print("OR - at least one condition must be True.")
+        print("NOT - reverses the result.")
+
+        print("\nExample:")
+        print("age = 18")
+        print("has_id = True")
+        print("if age >= 18 and has_id:")
+        print('    print("Allowed")')
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("Which operator requires both conditions to be True?")
+        print("[1] OR")
+        print("[2] NOT")
+        print("[3] AND")
+
+        correct_answer = "3"
+        lesson_opened = True
+
+    elif choice == "11":
+        print(purple + "\nLESSON 11: LOOPS" + reset)
+        print("Loops repeat a set of instructions.")
+
+        print("\nThere are two common types of loops:")
+        print("1. For Loop")
+        print("2. While Loop")
+
+        print("\n========== FOR LOOP EXAMPLE ==========")
+        print("A for loop repeats code for a specific sequence.")
+
+        print("\nExample:")
+        print("for number in range(1, 4):")
+        print("    print(number)")
+
+        print("\nOUTPUT:")
+        print("1")
+        print("2")
+        print("3")
+
+        print("\n========== WHILE LOOP EXAMPLE ==========")
+        print("A while loop repeats code while a condition is True.")
+
+        print("\nExample:")
+        print("number = 1")
+        print("while number <= 3:")
+        print("    print(number)")
+        print("    number = number + 1")
+
+        print("\nOUTPUT:")
+        print("1")
+        print("2")
+        print("3")
+
+        print("\nThe for loop uses a sequence,")
+        print("while the while loop uses a condition.")
+
+        print(cyan + "\nQUIZ TIME!" + reset)
+        print("What are loops used for?")
+        print("[1] To repeat instructions")
+        print("[2] To delete variables")
+        print("[3] To stop a computer")
+
+        correct_answer = "1"
+        lesson_opened = True
+
+    elif choice == "12":
+        stars = len(completed_lessons)
+
+        print(yellow + "\n========== MY STAR COLLECTION ==========" + reset)
+        print("Student Name:", name)
+        print("Stars Collected:", stars, "/ 11")
+
+        if stars == 0:
+            print("Achievement: New Learner")
+        elif stars <= 3:
+            print("Achievement: Beginner Coder")
+        elif stars <= 6:
+            print("Achievement: Python Explorer")
+        elif stars <= 10:
+            print("Achievement: Python Enthusiast")
+        else:
+            print(yellow + "Achievement: PYTHON MASTER!" + reset)
+
+        print(yellow + "========================================" + reset)
+
+    elif choice == "13":
+        print(purple + "\n========== MY LEARNING PROGRESS ==========" + reset)
+
+        for lesson_number in range(1, 12):
+
+            if str(lesson_number) in completed_lessons:
+                print(green + "Lesson", lesson_number, "- COMPLETED!" + reset)
+            else:
+                print(red + "Lesson", lesson_number, "- NOT YET COMPLETED" + reset)
+
+        progress = len(completed_lessons) / 11 * 100
+
+        print("-----------------------------------------")
+        print("Lessons Completed:", len(completed_lessons), "/ 11")
+        print(yellow + "Total Progress:", round(progress), "%" + reset)
+        print(purple + "=========================================" + reset)
+
+    elif choice == "0":
+        stars = len(completed_lessons)
+
+        print(purple + "\n================================" + reset)
+        print(purple + "       THANK YOU FOR PLAYING!" + reset)
+        print(purple + "================================" + reset)
+        print("Student:", name)
+        print(yellow + "Stars Collected:", stars, "/ 11" + reset)
+        print("Keep learning and keep coding!")
+        break
+
+    else:
+        print(red + "\nInvalid choice! Please choose from 0 to 13." + reset)
+
+    if lesson_opened:
+
+        while True:
+            answer = input("\nEnter your answer: ").strip()
+
+            if answer == correct_answer:
+
+                print(green + "\nCORRECT ANSWER!" + reset)
+
+                if choice not in completed_lessons:
+                    completed_lessons.append(choice)
+                    print(yellow + "Congratulations! You earned 1 star!" + reset)
+
+                    with open("progress.txt", "w") as file:
+                        for lesson in completed_lessons:
+                            file.write(lesson + "\n")
+
+                else:
+                    print(yellow + "You already earned a star for this lesson!" + reset)
+
+                break
+
+            else:
+                print(red + "\nINCORRECT ANSWER!" + reset)
+                print("Don't give up! Learning takes practice.")
+                print("Review the lesson and try answering again!")
+
+    input("\nPress Enter to return to the main menu...")
