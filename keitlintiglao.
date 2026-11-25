@@ -1,9 +1,9 @@
-
 purple = "\033[35m"
 cyan = "\033[36m"
 green = "\033[32m"
 red = "\033[31m"
 yellow = "\033[33m"
+blue = "\033[34m"
 reset = "\033[0m"
 
 print(purple + "=" * 45 + reset)
@@ -32,7 +32,6 @@ except FileNotFoundError:
 
 
 def main_menue():
-
     print(cyan + "\n========== MAIN MENU ==========" + reset)
     print("[1] Introduction to Programming")
     print("[2] Basic Syntax")
@@ -47,6 +46,7 @@ def main_menue():
     print("[11] Loops")
     print(yellow + "[12] My Star Collection" + reset)
     print(purple + "[13] My Learning Progress" + reset)
+    print(red + "[14] Reset My Progress" + reset)
     print("[0] Exit")
     print(cyan + "===============================" + reset)
 
@@ -318,21 +318,29 @@ while True:
     elif choice == "12":
         stars = len(completed_lessons)
 
+        if stars == 0:
+            title = "New Learner"
+            title_color = cyan
+        elif stars <= 3:
+            title = "Beginner Coder"
+            title_color = green
+        elif stars <= 6:
+            title = "Python Explorer"
+            title_color = yellow
+        elif stars <= 9:
+            title = "Python Enthusiast"
+            title_color = blue
+        elif stars == 10:
+            title = "Python Expert"
+            title_color = red
+        else:
+            title = "Python Master"
+            title_color = purple
+
         print(yellow + "\n========== MY STAR COLLECTION ==========" + reset)
         print("Student Name:", name)
         print("Stars Collected:", stars, "/ 11")
-
-        if stars == 0:
-            print("Achievement: New Learner")
-        elif stars <= 3:
-            print("Achievement: Beginner Coder")
-        elif stars <= 6:
-            print("Achievement: Python Explorer")
-        elif stars <= 10:
-            print("Achievement: Python Enthusiast")
-        else:
-            print(yellow + "Achievement: PYTHON MASTER!" + reset)
-
+        print(title_color + "Achievement Title: " + title + reset)
         print(yellow + "========================================" + reset)
 
     elif choice == "13":
@@ -352,19 +360,63 @@ while True:
         print(yellow + "Total Progress:", round(progress), "%" + reset)
         print(purple + "=========================================" + reset)
 
+    elif choice == "14":
+        print(red + "\n========== RESET MY PROGRESS ==========" + reset)
+        print("Are you sure you want to reset your progress?")
+        print("[1] Yes, reset my progress")
+        print("[2] No, go back to the menu")
+
+        confirm = input("\nChoose an option: ")
+
+        if confirm == "1":
+            completed_lessons.clear()
+
+            with open("progress.txt", "w") as file:
+                file.write("")
+
+            print(green + "\nYour progress has been reset!" + reset)
+
+        elif confirm == "2":
+            print(yellow + "\nYour progress is safe!" + reset)
+
+        else:
+            print(red + "\nInvalid choice!" + reset)
+
     elif choice == "0":
         stars = len(completed_lessons)
+
+        if stars == 0:
+            title = "New Learner"
+            title_color = cyan
+        elif stars <= 3:
+            title = "Beginner Coder"
+            title_color = green
+        elif stars <= 6:
+            title = "Python Explorer"
+            title_color = yellow
+        elif stars <= 9:
+            title = "Python Enthusiast"
+            title_color = blue
+        elif stars == 10:
+            title = "Python Expert"
+            title_color = red
+        else:
+            title = "Python Master"
+            title_color = purple
 
         print(purple + "\n================================" + reset)
         print(purple + "       THANK YOU FOR PLAYING!" + reset)
         print(purple + "================================" + reset)
-        print("Student:", name)
+
+        print("\nCongratulations,", name + "!")
         print(yellow + "Stars Collected:", stars, "/ 11" + reset)
-        print("Keep learning and keep coding!")
+        print(title_color + "Your Achievement Title: " + title + reset)
+
+        print("\nKeep learning and keep coding!")
         break
 
     else:
-        print(red + "\nInvalid choice! Please choose from 0 to 13." + reset)
+        print(red + "\nInvalid choice! Please choose from 0 to 14." + reset)
 
     if lesson_opened:
 
